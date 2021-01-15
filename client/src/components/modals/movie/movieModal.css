@@ -1,0 +1,205 @@
+.movie-detail-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.movie-detail-container {
+    padding-bottom: 2rem;
+}
+ 
+.close-button {
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.background-img-container {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.08;
+    display: inline;
+    position: absolute;
+}
+
+.movie-detail-img-div {
+    padding: 1.5rem;
+}
+
+.movie-detail-header {
+    padding-left: 0px;
+    padding-top: 15px;
+
+}
+
+.movie-detail-header h1 {
+    font-size: 200%;
+    font-weight: 600;
+}
+
+.movie-detail-sub-header p > span {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-right: 1px solid black;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.movie-detail-overview-header {
+    padding-top: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.movie-detail-overview-text {
+    font-size: 1.6rem;
+}
+
+/* similar movies */
+
+.similar-movies-header-1 {
+    margin: 5.5rem 0 .5rem 2rem;
+}
+
+
+.similar-movies-header-1 h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.similar-movies-wrapper {
+    width: 98%;
+    margin: 0 auto !important;
+}
+
+.similar-movies-5-div {
+    position: relative;
+}
+
+.footer-container-modal {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: .5rem;
+}
+
+.similar-movies-body {
+    padding-bottom: 5rem;
+}
+
+.similar-movies-header h1 {
+    font-size: 3rem;
+}
+
+.similar-movies-5-div {
+    border: 0 !important;
+    background-color: #303030 !important;
+    padding: 0 !important;
+}
+
+
+.similar-movies-img {
+    height: 20rem;
+    width: 100%;
+    cursor: pointer;
+} 
+
+.similar-movies-rating {
+    color: #f5c518;
+    font-size: 2.3rem;
+}
+
+.similar-movies-rating-text {
+    color: #97acb7;
+    font-size: 1.7rem;
+}
+.similar-movies-title {
+    color: white;
+    font-size: 1.7rem !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+}
+
+.similar-movies-title:hover {
+    text-decoration: underline;
+    text-decoration-color: #fff;
+}
+
+.similar-movies-footer {
+    font-size: 2.5rem;
+}
+
+.justify-content-between span {
+    cursor: pointer;
+}
+
+.similar-movies-footer span:hover {
+    color: white;
+} 
+
+/* cast */
+
+.movie-cast {
+    margin-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.movie-cast h1 {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.actor-wrapper {
+    margin: .4rem 2rem;
+}
+
+.movie-actor-image {
+    height: 7rem;
+    max-width: 4.7rem;
+    cursor: pointer;
+}
+
+.movie-actor-name-container {
+    position: relative;
+    left: 1rem;
+    top: 1rem;
+}
+
+.movie-actor-name-container h5 {
+    font-size: 1.4rem;
+}
+
+.movie-actor-name {
+    cursor: pointer;
+    color: #136CB2;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.movie-actor-name:hover {
+    text-decoration: underline;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .movie-detail-container {
+        display: initial;
+    }
+
+    .movie-detail-img-div {
+        margin: 0 auto;
+    }
+    
+    .movie-detail-header {
+        margin: 0 auto;
+        width: 100%;
+    } 
+}

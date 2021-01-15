@@ -1,0 +1,86 @@
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+}
+
+.row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.watchlist-container {
+    width: 98%;
+    margin: 0 auto !important;
+}
+
+
+.watchlist-container h1 {
+    padding-top: 10rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #f5c518;
+    text-align: center;
+}
+
+.watchlist-movies-wrapper {
+    margin-top: 4rem;
+}
+
+.watchlist-div {
+    border: 0 !important;
+    background-color: #303030 !important;
+    padding: 0 !important;
+    margin-bottom: 3rem;
+}
+
+.watchlist-div:hover {
+    bottom: .6rem;
+}
+
+.watchlist-img {
+    height: 20rem;
+    width: 100%;
+    cursor: pointer;
+} 
+
+.watchlist-rating {
+    color: #f5c518;
+    font-size: 2.3rem;
+} 
+
+.watchlist-rating-text {
+    color: #97acb7;
+    font-size: 1.7rem;
+}
+
+.watchlist-title {
+    color: white;
+    font-size: 1.7rem !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+}
+
+.watchlist-title:hover {
+    text-decoration: underline;
+    text-decoration-color: #fff;
+}
+
+.watchlist-body {
+    padding: 0 1rem 6rem 1rem;
+}
+
+.watchlist-footer {
+    font-size: 2.5rem;
+    width: 100%;
+} 
+
+.justify-content-between span {
+    cursor: pointer;
+}
+
+.watchlist-info-icon:hover, .watchlist-minus-icon:hover {
+    color: white;
+}

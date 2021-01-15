@@ -1,0 +1,95 @@
+.top-rated-wrapper {
+    width: 80%;
+    margin: 5rem auto 0;
+}
+
+.top-rated-header {
+    color: #f5c518;
+    padding: 2rem 0 6rem;
+    display: flex;
+}
+
+.top-rated-header h1 {
+    font-size: 3rem;
+}
+
+.top-rated-header h2 {
+    margin-right: 4rem;
+    font-size: 2.5rem;
+    position: relative;
+    top: .5rem;
+    cursor: pointer;
+}
+
+.top-rated-header h2:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.top-rated-header h2 span {
+    position: relative;
+    bottom: .2rem;
+}
+
+.top-rated-container {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.top-rated-5-div {
+    margin: 2rem;
+    border: 0 !important;
+    background-color: #303030 !important;
+    padding: 0 !important;
+}
+
+.top-rated-5-div:hover {
+    bottom: .6rem;
+}
+
+.top-rated-img {
+    height: 25rem;
+    cursor: pointer;
+} 
+
+.top-rated-rating {
+    color: #f5c518;
+    font-size: 2.3rem;
+}
+
+.top-rated-rating-text {
+    color: #97acb7;
+    font-size: 1.7rem;
+}
+
+.top-rated-title {
+    color: white;
+    font-size: 1.7rem !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+}
+
+.top-rated-title:hover, .most-popular-minus-icon:hover {
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    color: #fff;
+}
+
+.most-popular-info-icon:hover {
+    color: white;
+}
+
+.top-rated-footer {
+    font-size: 2.5rem;
+}
+
+.justify-content-between span {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .top-rated-header {
+        display:initial !important;
+    }
+}

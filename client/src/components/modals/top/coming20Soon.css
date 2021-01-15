@@ -1,0 +1,102 @@
+.modal-content {
+    border-right: 0 !important;
+}
+
+.close-button-top {
+    position: absolute;
+    right: 6.1rem;
+    top: -.5rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #f5c518;
+}
+
+.upcoming-20-rated-wrapper {
+    background-color: black;
+}
+
+.upcoming-20-rated-header-container {
+    position: relative;
+    margin-top: 2rem;
+    left: 3.5%;
+    margin-bottom: 2rem;
+}
+
+.upcoming-20-rated-header {
+    color: #f5c518;
+}
+
+
+.upcoming-20-div {
+    margin-top: 2rem;
+    width: 90%;
+    left: 3.5%;
+    padding: 0;
+}
+
+.upcoming-20-img {
+    height: 20rem;
+    width: 14rem;
+    cursor: pointer;
+}
+
+.upcoming-20-rating {
+    color: #f5c518;
+    font-size: 2rem;
+    position: relative;
+    bottom: .1rem;
+}
+
+.upcoming-20-rating-text {
+    font-size: 2rem;
+}
+
+.upcoming-20-title {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.upcoming-20-title:hover {
+    text-decoration: underline;
+}
+
+.upcoming-20-overview {
+    font-size: 1.4rem;
+}
+
+.my-modal2 .modal-content {
+    width: 95vw !important;
+    right: 50%;
+    max-width: 92vw !important;
+    min-height: 50vh !important;
+    transform: translateX(15%);
+} 
+
+@media screen and (max-width: 600px) {
+    .my-modal2 .modal-content {
+        right: 23%;
+    }
+    
+    .most-popular-20-img {
+        margin-top: 1rem !important;
+        margin-left: 1rem !important;
+        height: 6rem;
+        width: 4rem;
+    }
+
+    .most-popular-20-title  {
+        font-size: 1.5rem;
+    }
+
+    .most-popular-20-rating {
+        font-size: 1.4rem ;
+    }
+
+    .most-popular-20-rating-text {
+        font-size: 1.3rem;
+    }
+
+    .most-popular-20-overview {
+        width: 100%;
+    }
+}

@@ -1,0 +1,109 @@
+.genre-wrapper {
+    width: 80%;
+    margin: 5rem auto 0;
+    padding-top: 2rem;
+}
+
+.genre-header {
+    margin-top: 4rem;
+}
+
+.genres-list-wrapper {
+    position: relative;
+    left: .8rem;
+    padding-bottom: 6rem;
+}
+
+.genre-container2 {
+    margin: 0 !important;
+}
+
+.list-inline-item button.active {
+    background-color: #f5c518;
+    color: black;
+}
+
+.list-inline-item button {
+    font-size: 1.7rem;
+    margin: .5rem;
+    color: #f5c518;
+    border-color: #f5c518;
+}
+
+.list-inline-item button:hover {
+    color: black;
+    background-color: #f5c518;
+}
+
+.genre-container {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.genre-header {
+    color: #f5c518;
+    padding: 2rem 0;
+}
+
+.genre-header h1 {
+    font-size: 3rem;
+}
+
+.genre-5-div {
+    /* margin: 2rem; */
+    border: 0 !important;
+    background-color: #303030 !important;
+    padding: 0 !important;
+}
+
+.genre-5-div:hover {
+    bottom: .6rem;
+}
+
+.genre-img {
+    height: 25rem;
+    width: 100%;
+    cursor: pointer;
+} 
+
+.genre-rating {
+    color: #f5c518;
+    font-size: 2.3rem;
+}
+
+.genre-rating-text {
+    color: #97acb7;
+    font-size: 1.7rem;
+}
+
+.genre-title {
+    color: white;
+    font-size: 1.7rem !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+}
+
+.genre-title:hover, .most-popular-minus-icon:hover {
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    color: #fff;
+}
+
+.most-popular-info-icon:hover {
+    color: white;
+}
+
+.genre-footer {
+    font-size: 2.5rem;
+}
+
+.justify-content-between span {
+    cursor: pointer;
+} */
+
+@media screen and (max-width: 600px) {
+    /* .genre-5-div {
+        width: 33% !important;
+    } */
+}

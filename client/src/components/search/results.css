@@ -1,0 +1,14 @@
+.results {
+    background-color:  #303030;
+    border-radius: 1rem;
+    position: absolute;
+    width: 100%;
+    max-height: 50rem !important;
+    overflow-y: scroll;
+    margin-top: 1rem;
+    box-shadow: 0 0 .7rem .2rem white;
+}
+
+.results:focus {
+    outline: none;
+}

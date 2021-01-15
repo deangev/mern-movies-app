@@ -1,0 +1,74 @@
+.trending-people-wrapper {
+    width: 80%;
+    margin: 5rem auto 0;
+}
+
+.trending-people-header {
+    color: #f5c518;
+    padding: 4rem 0 6rem;
+    display: flex;
+}
+
+.trending-people-header h1 {
+    font-size: 3rem;
+}
+
+.trending-people-header h2 {
+    margin-right: 4rem;
+    width: 14rem;
+    font-size: 2.5rem;
+    position: relative;
+    top: .5rem;
+    cursor: pointer;
+}
+
+.trending-people-header h2:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.trending-people-header h2 span {
+    position: relative;
+    bottom: .2rem;
+}
+
+.trending-people-container {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.trending-people-div {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.trending-people-img {
+    height: 25rem;
+    width: 20rem;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.trending-people-name {
+    margin-top: 2rem;
+    color: #fff;
+    font-size: 2.2rem;
+}
+
+.trending-people-div:hover {
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    .trending-people-header {
+        display: initial;
+        margin-bottom: 4rem !important;
+    }
+
+    .trending-people-container {
+        margin-top: 5rem !important;
+    }
+}

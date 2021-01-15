@@ -1,0 +1,95 @@
+.modal-content {
+    border-right: 0 !important;
+}
+
+.close-button-top {
+    position: absolute;
+    right: 6.1rem;
+    top: -.5rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #f5c518;
+}
+
+.top-20-most-popular-wrapper {
+    background-color: black;
+}
+
+.top-20-most-popular-header-container {
+    position: relative;
+    margin-top: 2rem;
+    left: 3.5%;
+    margin-bottom: 2rem;
+}
+
+.top-20-most-popular-header {
+    color: #f5c518;
+}
+
+
+.most-popular-20-div {
+    display: flex;
+    margin-top: 2rem;
+    width: 90%;
+    left: 3.5%;
+    padding: 0;
+}
+
+.most-popular-20-img {
+    height: 20rem;
+    width: 14rem;
+    cursor: pointer;
+}
+
+.most-popular-20-rating {
+    color: #f5c518;
+    font-size: 2rem;
+    position: relative;
+    bottom: .1rem;
+}
+
+.most-popular-20-rating-text {
+    font-size: 2rem;
+}
+
+.most-popular-20-title {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.most-popular-20-title:hover {
+    text-decoration: underline;
+}
+
+.most-popular-20-overview {
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width: 600px) {
+    .most-popular-20-div {
+        /* display: initial !important; */
+    }
+    
+    .most-popular-20-img {
+        margin-top: 1rem !important;
+        margin-left: 1rem !important;
+        height: 6rem;
+        width: 4rem;
+    }
+
+    .most-popular-20-title  {
+        font-size: 1.5rem;
+    }
+
+    .most-popular-20-rating {
+        font-size: 1.4rem ;
+    }
+
+    .most-popular-20-rating-text {
+        font-size: 1.3rem;
+    }
+
+    .most-popular-20-overview {
+        width: 100%;
+    }
+}

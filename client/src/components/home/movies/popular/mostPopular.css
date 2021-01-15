@@ -1,0 +1,112 @@
+.most-popular-wrapper {
+    width: 80%;
+    margin: 5rem auto 0;
+    padding-top: 2rem;
+}
+
+.most-popular-header {
+    color: #f5c518;
+    padding: 2rem 0 6rem;
+    display: flex;
+}
+
+.most-popular-header h1 {
+    font-size: 3rem;
+}
+
+.most-popular-header h2 {
+    margin-right: 4rem;
+    font-size: 2.5rem;
+    position: relative;
+    top: .5rem;
+    cursor: pointer;
+    
+}
+
+.most-popular-header h2:hover {
+    text-decoration: underline;
+    color: white;
+    z-index: 2;
+}
+
+.most-popular-header h2 span {
+    position: relative;
+    bottom: .2rem;
+}
+
+.most-popular-container {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+
+.most-popular-5-div {
+    border: 0 !important;
+    background-color: #303030 !important;
+    padding: 0 !important;
+}
+
+.most-popular-5-div:hover {
+    bottom: .6rem;
+}
+
+.most-popular-img {
+    height: 25rem;
+    cursor: pointer;
+} 
+
+.most-popular-rating {
+    color: #f5c518;
+    font-size: 2.3rem;
+}
+
+.most-popular-rating-text {
+    color: #97acb7;
+    font-size: 1.7rem;
+}
+
+.most-popular-title {
+    color: white;
+    font-size: 1.7rem !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+}
+
+.most-popular-title:hover {
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    color: #fff;
+}
+
+.most-popular-footer {
+    font-size: 2.5rem;
+}
+
+.justify-content-between span {
+    cursor: pointer;
+}
+
+.most-popular-info-icon:hover, .most-popular-minus-icon:hover {
+    color: white;
+}
+
+.my-modal {
+    width: 80vw !important;
+    max-width: 80vw !important;
+    min-height: 50vh !important;
+} 
+
+.my-modal2 {
+    width: 60vw !important;
+    max-width: 75vw !important;
+    min-height: 50vh !important;
+} 
+
+
+@media screen and (max-width: 600px) {
+    .most-popular-header {
+        display:initial !important;
+    }
+}
