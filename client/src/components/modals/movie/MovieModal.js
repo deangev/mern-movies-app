@@ -3,7 +3,7 @@ import { fetchMovieDetail, fetchSimilarMovies, fetchCasts, posterUrl } from '../
 import './movieModal.css';
 import image from '../../../images/image_not_found.png';
 import * as Ai from 'react-icons/ai';
-import { Modal } from 'react-bootstrap';
+import { Modal, OverlayTrigger, Popover } from 'react-bootstrap';
 import ActorModal from '../actor/ActorModal';
 import UserContext from '../../../context/UserContext';
 import watchlistContext from '../../../context/watchlistContext';
@@ -18,7 +18,6 @@ export default function MovieModal({ openModal, closeModal, id }) {
     const [chosenPersonId, setChosenPersonId] = useState();
     const { userData } = useContext(UserContext);
     const { userWatchlist, setUserWatchlist } = useContext(watchlistContext);
-
     useEffect(() => {
         const fetchApi = async () => {
             setMovieDetail(await fetchMovieDetail(id))
@@ -68,14 +67,21 @@ export default function MovieModal({ openModal, closeModal, id }) {
         setChosenPersonId(id)
         setModalOpen(true)
     }
-    console.log();
+
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Content id="popasa" style={{ fontSize: '1.4rem', fontWeight: '600' }}>
+                You must sign in first
+          </Popover.Content>
+        </Popover>
+    );
 
     return (
         <div className="movie-modal" style={{ display: `${modalOpen ? 'none' : 'block'}` }}>
             {movieDetail && movieDetail.id && movieDetail.poster_path && movieDetail.release_date && cast &&
                 <div>
                     <div className="movie-detail-wrapper">
-                        <div style={{height: '100%', width: '100%'}}>
+                        <div style={{ height: '100%', width: '100%' }}>
                             <div className="background-img-container" style={{ backgroundImage: `url(${movieDetail.backdrop_path ? posterUrl + (movieDetail.backdrop_path) : image})` }}></div>
                             <span className="close-button" onClick={closeModal}><Ai.AiOutlineClose /></span>
                             <div className="movie-detail-container row">
@@ -122,9 +128,18 @@ export default function MovieModal({ openModal, closeModal, id }) {
                                             <div className="footer-container-modal pr-3 pl-3">
                                                 <div className="text-muted similar-movies-footer d-flex justify-content-between">
                                                     <span>
-                                                        {userWatchlist && userWatchlist.some(watchlistMovie => watchlistMovie.id === movie.id) ?
-                                                            <Ai.AiOutlineMinusCircle onClick={() => handleWatchList(movie)} /> :
-                                                            <Ai.AiOutlinePlusCircle onClick={() => handleWatchList(movie)} />
+                                                        {userData.id ?
+                                                            (
+                                                                userWatchlist && userWatchlist.some(watchlistMovie => watchlistMovie.id === movie.id) ?
+                                                                    <Ai.AiOutlineMinusCircle onClick={() => handleWatchList(movie)} /> :
+                                                                    <Ai.AiOutlinePlusCircle onClick={() => handleWatchList(movie)} />
+                                                            ) :
+                                                            <div>
+                                                                <OverlayTrigger trigger="click" rootClose placement="right" overlay={popover}>
+                                                                    <Ai.AiOutlinePlusCircle />
+                                                                </OverlayTrigger>
+                                                            </div>
+
                                                         }
                                                     </span>
                                                     <span><Ai.AiOutlineInfoCircle onClick={() => openModal(movie.id)} /></span>

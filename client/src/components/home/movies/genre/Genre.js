@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import { fetchGenre, fetchMovieByGenre, } from "../../../../service/index";
-import { Card, Modal } from 'react-bootstrap';
+import { Card, Modal, OverlayTrigger, Popover } from 'react-bootstrap';
 import * as Ai from 'react-icons/ai';
 import UserContext from '../../../../context/UserContext';
 import Axios from "axios";
 import watchlistContext from "../../../../context/watchlistContext";
 import MovieModal from "../../../modals/movie/MovieModal";
-import {url} from '../../../../context/urlProvider';
+import { url } from '../../../../context/urlProvider';
 import './genre.css';
 
 export default function Genre() {
@@ -73,6 +73,15 @@ export default function Genre() {
         setMovieByGenre(await fetchMovieByGenre(genre_id));
     };
 
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Content id="popasa" style={{ fontSize: '1.4rem', fontWeight: '600' }}>
+                You must sign in first
+          </Popover.Content>
+        </Popover>
+    );
+
+
     return (
         <div className="genre-wrapper">
             <div className="genre-header d-flex justify-content-between">
@@ -110,9 +119,18 @@ export default function Genre() {
                                 <Card.Footer>
                                     <div className="text-muted genre-footer d-flex justify-content-between">
                                         <span className="most-popular-minus-icon">
-                                            {userWatchlist && userWatchlist.some(watchlistMovie => watchlistMovie.id === movie.id) ?
-                                                <Ai.AiOutlineMinusCircle onClick={() => handleWatchList(movie)} /> :
-                                                <Ai.AiOutlinePlusCircle onClick={() => handleWatchList(movie)} />
+                                            {userData.id ?
+                                                (
+                                                    userWatchlist && userWatchlist.some(watchlistMovie => watchlistMovie.id === movie.id) ?
+                                                        <Ai.AiOutlineMinusCircle onClick={() => handleWatchList(movie)} /> :
+                                                        <Ai.AiOutlinePlusCircle onClick={() => handleWatchList(movie)} />
+                                                ) :
+                                                <div>
+                                                    <OverlayTrigger trigger="click" rootClose placement="right" overlay={popover}>
+                                                        <Ai.AiOutlinePlusCircle />
+                                                    </OverlayTrigger>
+                                                </div>
+
                                             }
                                         </span>
                                         <span className="most-popular-info-icon"><Ai.AiOutlineInfoCircle onClick={() => openModal(movie.id)} /></span>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { fetchUpcomingMovie } from '../../../../service/index'
 import './upcoming.css';
-import { Card, Modal } from 'react-bootstrap';
+import { Card, Modal, OverlayTrigger, Popover } from 'react-bootstrap';
 import * as Ai from 'react-icons/ai';
 import MovieModal from '../../../modals/movie/MovieModal';
 import Coming20Soon from '../../../modals/top/Coming20Soon';
@@ -71,6 +71,13 @@ export default function Upcoming() {
         setModalOpen2(false)
     }
 
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Content id="popasa" style={{ fontSize: '1.4rem', fontWeight: '600' }}>
+                You must sign in first
+          </Popover.Content>
+        </Popover>
+    );
 
     return (
         <div className="upcoming-wrapper">
@@ -91,9 +98,18 @@ export default function Upcoming() {
                             <Card.Footer>
                                 <div className="text-muted upcoming-footer d-flex justify-content-between">
                                     <span className="most-popular-minus-icon">
-                                        {userWatchlist && userWatchlist.some(watchlistMovie => watchlistMovie.id === movie.id) ?
-                                            <Ai.AiOutlineMinusCircle onClick={() => handleWatchList(movie)} /> :
-                                            <Ai.AiOutlinePlusCircle onClick={() => handleWatchList(movie)} />
+                                        {userData.id ?
+                                            (
+                                                userWatchlist && userWatchlist.some(watchlistMovie => watchlistMovie.id === movie.id) ?
+                                                    <Ai.AiOutlineMinusCircle onClick={() => handleWatchList(movie)} /> :
+                                                    <Ai.AiOutlinePlusCircle onClick={() => handleWatchList(movie)} />
+                                            ) :
+                                            <div>
+                                                <OverlayTrigger trigger="click" rootClose placement="right" overlay={popover}>
+                                                    <Ai.AiOutlinePlusCircle />
+                                                </OverlayTrigger>
+                                            </div>
+
                                         }
                                     </span>
                                     <span className="most-popular-info-icon"><Ai.AiOutlineInfoCircle onClick={() => openModal(movie.id)} /></span>

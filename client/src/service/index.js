@@ -281,6 +281,7 @@ export const fetchMovieDetail = async (id) => {
                 language: 'en_US'
             }
         });
+        
         return data;
     } catch (error) { }
 }

@@ -40,9 +40,7 @@ export default function Watchlist() {
     function closeModal() {
         setModalOpen(false)
     }
-
-
-
+    
     return (
         <div className="watchlist-container">
             <div className="watchlist-header-container">
@@ -58,7 +56,7 @@ export default function Watchlist() {
                                         <img className="watchlist-img" variant="most" onClick={() => openModal(movie.id)} src={movie.poster} alt="wishlist-img" />
                                         <div className="watchlist-body">
                                             <div><span className="watchlist-rating"><Ai.AiFillStar /></span> <span className="watchlist-rating-text">{movie.rating}</span></div>
-                                            <div className="watchlist-title" onClick={() => openModal(movie.id)}>{movie.title} ({movie.year && movie.year.slice(0, 4)})</div>
+                                            <div className="watchlist-title" onClick={() => openModal(movie.id)}>{movie.title} {movie.year && `(${movie.year.slice(0, 4)})`}</div>
                                         </div>
                                         <div className="footer-container-modal row m-0 pr-2 pl-2">
                                             <div className="text-muted watchlist-footer d-flex justify-content-between">
