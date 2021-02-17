@@ -1,6 +1,6 @@
 .top-navbar {
     height: 6rem;
-    background-color: rgb(48, 48, 48);
+    background-color: #000000;
     align-items: center;
     padding: 0;
     margin: 0 !important;
@@ -19,13 +19,13 @@
 
 .header-logo {
     align-items: center;
-    color: #f5c518;
+    color: #fff;
     cursor: pointer;
     font-size: 40px;
 }
 
 .header-logo svg {
-    margin-bottom: .5rem;
+    margin-bottom: 2rem;
 }
 
 .top-navbar-user-container {

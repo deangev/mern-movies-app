@@ -2,7 +2,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    color: white;
+    color: #ccd6f6;
     display: inline-block;
     right: 0;
 }
@@ -29,9 +29,9 @@
 
 .user-icon {
     height: 100%;
-    width: 4rem;
+    width: 3.5rem;
     margin-right: 1rem;
-    color:  #f5c518;
+    color: #fff;
 }
 
 .user-name {
@@ -49,15 +49,18 @@
 
 #dropdownMenuButton {
     padding: 0;
-    /* margin-left: 2rem; */
     background-color: inherit;
     border: none;
     outline: none;
     display: block;
     border-radius: 50%;
-    color: #f5c518;
+    color: #fff;
     font-size: 4rem;
     text-decoration: none;
+    margin-bottom: .5rem;
+}
+
+#dropdownMenuButton .dropdown-icon {
     margin-bottom: .5rem;
 }
 

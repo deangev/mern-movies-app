@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { fetchMovieDetail, fetchSimilarMovies, fetchCasts, posterUrl } from '../../../service/index';
+import { fetchMovieDetail, fetchSimilarMovies, fetchCasts, posterUrl, genresList } from '../../../service/index';
 import './movieModal.css';
 import image from '../../../images/image_not_found.png';
 import * as Ai from 'react-icons/ai';
@@ -18,6 +18,7 @@ export default function MovieModal({ openModal, closeModal, id }) {
     const [chosenPersonId, setChosenPersonId] = useState();
     const { userData } = useContext(UserContext);
     const { userWatchlist, setUserWatchlist } = useContext(watchlistContext);
+    
     useEffect(() => {
         const fetchApi = async () => {
             setMovieDetail(await fetchMovieDetail(id))
@@ -66,6 +67,21 @@ export default function MovieModal({ openModal, closeModal, id }) {
     function openActorModal(id) {
         setChosenPersonId(id)
         setModalOpen(true)
+    }
+
+    const getMovieGenre = (idArr) => {
+        const genresArray = []
+        idArr.forEach((sId) => {
+            const genreName = genresList.filter(genre => genre.id === sId)
+            genresArray.push(genreName[0].name)
+        })
+        return (
+            <span>
+                {genresArray.map((genre, index) => {
+                    return <p className="movie-sGenre">{genre}</p>
+                })}
+            </span>
+        )
     }
 
     const popover = (
@@ -118,12 +134,13 @@ export default function MovieModal({ openModal, closeModal, id }) {
                             <div className="row similar-movies-wrapper d-flex">
                                 {similarMovies.map((movie, index) => {
                                     return (
-                                        index < 6 &&
+                                        index < 5 &&
                                         <div key={movie.id} className="col-sm col-5 box m-3 similar-movies-5-div">
                                             <img className="similar-movies-img" onClick={() => openModal(movie.id)} variant="top" alt="movie-img" src={(movie.poster && movie.poster.slice(-4) === 'null') ? image : movie.poster} />
                                             <div className="similar-movies-body pr-3 pl-3">
+                                                <div className="mt-3 similar-movies-title" onClick={() => openModal(movie.id)}>{movie.title} ({movie.year})</div>
                                                 <div><span className="similar-movies-rating"><Ai.AiFillStar /></span> <span className="similar-movies-rating-text">{movie.rating}</span></div>
-                                                <div className="similar-movies-title" onClick={() => openModal(movie.id)}>{movie.title} ({movie.year})</div>
+                                                <div className="mt-3 genre-rext">{getMovieGenre(movie.genres)}</div>
                                             </div>
                                             <div className="footer-container-modal pr-3 pl-3">
                                                 <div className="text-muted similar-movies-footer d-flex justify-content-between">

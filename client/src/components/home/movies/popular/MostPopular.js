@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { fetchMostPopularMovies } from '../../../../service/index';
+import { fetchMostPopularMovies, genresList } from '../../../../service/index';
 import { Card, Modal, OverlayTrigger, Popover } from 'react-bootstrap';
 import './mostPopular.css';
 import * as Ai from 'react-icons/ai'
@@ -78,6 +78,21 @@ export default function MostPopular() {
         </Popover>
     );
 
+    const getMovieGenre = (idArr) => {
+        const genresArray = []
+        idArr.forEach((sId) => {
+            const genreName = genresList.filter(genre => genre.id === sId)
+            genresArray.push(genreName[0].name)
+        })
+        return (
+            <span>
+                {genresArray.map((genre, index) => {
+                    return <p className="movie-sGenre">{genre}</p>
+                })}
+            </span>
+        )
+    }
+
     return (
         <div className="most-popular-wrapper">
             <div className="most-popular-header justify-content-between">
@@ -87,13 +102,13 @@ export default function MostPopular() {
             <div className="row most-popular-container m-0 justify-content-center">
                 {mostPopularMovies && mostPopularMovies.map((movie, index) => {
                     return (
-                        index < 6 &&
-
-                        <Card key={movie.id} className="most-popular-5-div col-lg col-md-3 col-5 box m-3">
+                        index < 5 &&
+                        <Card key={movie.id} className="most-popular-5-div col-lg col-md-3 col-sm-5 box m-3">
                             <Card.Img className="most-popular-img" variant="most" onClick={() => openModal(movie.id)} src={movie.poster} />
                             <Card.Body className="most-popular-body">
-                                <Card.Text><span className="most-popular-rating"><Ai.AiFillStar /></span> <span className="most-popular-rating-text">{movie.rating}</span></Card.Text>
                                 <Card.Text className="most-popular-title" onClick={() => openModal(movie.id)}>{movie.title} ({movie.year})</Card.Text>
+                                <Card.Text><span className="most-popular-rating"><Ai.AiFillStar /></span> <span className="most-popular-rating-text">{movie.rating}</span></Card.Text>
+                                <Card.Text className="genre-rext">{getMovieGenre(movie.genres)}</Card.Text>
                             </Card.Body>
                             <Card.Footer>
                                 <div className="text-muted most-popular-footer d-flex justify-content-between">

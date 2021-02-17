@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Hellix', 'Roboto', sans-serif;
 }
 
 html {
@@ -22,7 +22,7 @@ body {
 #root {
     min-height: 100vh;
     width: 100vw;
-    background:#000;
+    background:#1b1b1b;
     padding-bottom: 10rem;
     margin: 0;
     padding: 0;
@@ -41,12 +41,12 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     border-radius: 1rem;
-    background:#f5c518;
+    background:#fff;
     padding: 1rem;
 }
   
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #f5c518;
+    background: #fff;
     border-radius: 1rem;
 } 

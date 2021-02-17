@@ -10,14 +10,15 @@
 .searchbox {
     width: 100%;
     height: 4rem;
-    font-size: 2rem;
+    font-size: 2.2rem;
     padding-left: 1rem;
     border: none;
     outline: none;
     background: none;
-    background-color: #eee;
+    background-color: rgb(73, 73, 73);
     border-radius: 1rem;
     transition: 0.5s ease-out;
+    color: white;
 }
 
 @media screen and (max-width: 1100px) {

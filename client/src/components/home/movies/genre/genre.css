@@ -1,3 +1,15 @@
+.genre-rext {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.movie-sGenre {
+    border: #fff 2px solid;
+    padding: 0 .4rem .2rem;
+    margin-right: 1rem;
+    display: inline-block;
+}
+
 .genre-wrapper {
     width: 80%;
     margin: 5rem auto 0;
@@ -19,20 +31,20 @@
 }
 
 .list-inline-item button.active {
-    background-color: #f5c518;
+    background-color: #fff;
     color: black;
 }
 
 .list-inline-item button {
     font-size: 1.7rem;
     margin: .5rem;
-    color: #f5c518;
-    border-color: #f5c518;
+    color: #bbbbbb;
+    border-color: #bbb;
 }
 
 .list-inline-item button:hover {
     color: black;
-    background-color: #f5c518;
+    background-color: #fff;
 }
 
 .genre-container {
@@ -42,7 +54,7 @@
 }
 
 .genre-header {
-    color: #f5c518;
+    color: #eeeeee;
     padding: 2rem 0;
 }
 
@@ -51,14 +63,16 @@
 }
 
 .genre-5-div {
-    /* margin: 2rem; */
     border: 0 !important;
     background-color: #303030 !important;
     padding: 0 !important;
+    -moz-box-shadow: 0 0 14px #ccc;
+    -webkit-box-shadow: 0 0 14px #ccc;
+    box-shadow: 0 0 14px #ccc;
 }
 
 .genre-5-div:hover {
-    bottom: .6rem;
+    bottom: .4rem;
 }
 
 .genre-img {
@@ -68,8 +82,10 @@
 } 
 
 .genre-rating {
+    position: relative;
     color: #f5c518;
     font-size: 2.3rem;
+    bottom: .37rem;
 }
 
 .genre-rating-text {

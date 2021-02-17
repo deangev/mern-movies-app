@@ -4,7 +4,7 @@
 }
 
 .upcoming-header {
-    color: #f5c518;
+    color: #eee;
     padding: 2rem 0 6rem;
     display: flex;
 }
@@ -42,10 +42,13 @@
     border: 0 !important;
     background-color: #303030 !important;
     padding: 0 !important;
+    -moz-box-shadow: 0 0 14px #ccc;
+    -webkit-box-shadow: 0 0 14px #ccc;
+    box-shadow: 0 0 14px #ccc;
 }
 
 .upcoming-5-div:hover {
-    bottom: .6rem;
+    bottom: .4rem;
 }
 
 .upcoming-img {
@@ -61,6 +64,9 @@
 .upcoming-rating-text {
     color: #97acb7;
     font-size: 1.7rem;
+    display: inline-block;
+    position: relative;
+    top: .4rem !important;
 }
 
 .upcoming-title {

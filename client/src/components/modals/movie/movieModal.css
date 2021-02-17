@@ -110,6 +110,8 @@
 } 
 
 .similar-movies-rating {
+    position: relative;
+    bottom: .3rem;
     color: #f5c518;
     font-size: 2.3rem;
 }

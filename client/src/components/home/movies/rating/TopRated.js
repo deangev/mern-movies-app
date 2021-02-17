@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { fetchTopratedMovie } from '../../../../service/index'
+import { fetchTopratedMovie, genresList } from '../../../../service/index'
 import './topRated.css';
 import { Card, OverlayTrigger, Popover } from 'react-bootstrap';
 import * as Ai from 'react-icons/ai';
@@ -71,6 +71,21 @@ export default function TopRated() {
     setModalOpen2(false)
   }
 
+  const getMovieGenre = (idArr) => {
+    const genresArray = []
+    idArr.forEach((sId) => {
+      const genreName = genresList.filter(genre => genre.id === sId)
+      genresArray.push(genreName[0].name)
+    })
+    return (
+      <span>
+        {genresArray.map((genre, index) => {
+          return <p className="movie-sGenre">{genre}</p>
+        })}
+      </span>
+    )
+  }
+
   const popover = (
     <Popover id="popover-basic">
       <Popover.Content id="popasa" style={{ fontSize: '1.4rem', fontWeight: '600' }}>
@@ -88,12 +103,13 @@ export default function TopRated() {
       <div className="row top-rated-container justify-content-center">
         {topMovies && topMovies.map((movie, index) => {
           return (
-            index < 6 &&
+            index < 5 &&
             <Card key={movie.id} className="col-lg col-md-3 col-5 box m-3 top-rated-5-div" style={{ width: '20rem' }}>
               <Card.Img className="top-rated-img" onClick={() => openModal(movie.id)} variant="top" src={movie.poster} />
               <Card.Body className="top-rated-body">
-                <Card.Text><span className="top-rated-rating"><Ai.AiFillStar /></span> <span className="top-rated-rating-text">{movie.rating}</span></Card.Text>
                 <Card.Text className="top-rated-title" onClick={() => openModal(movie.id)}>{movie.title} ({movie.year})</Card.Text>
+                <Card.Text><span className="top-rated-rating"><Ai.AiFillStar /></span> <span className="top-rated-rating-text">{movie.rating}</span></Card.Text>
+                <Card.Text className="genre-rext">{getMovieGenre(movie.genres)}</Card.Text>
               </Card.Body>
               <Card.Footer>
                 <div className="text-muted top-rated-footer d-flex justify-content-between">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { fetchGenre, fetchMovieByGenre, } from "../../../../service/index";
+import { fetchGenre, fetchMovieByGenre, genresList } from "../../../../service/index";
 import { Card, Modal, OverlayTrigger, Popover } from 'react-bootstrap';
 import * as Ai from 'react-icons/ai';
 import UserContext from '../../../../context/UserContext';
@@ -17,7 +17,6 @@ export default function Genre() {
     const { userData } = useContext(UserContext);
     const { userWatchlist, setUserWatchlist } = useContext(watchlistContext);
     const [checked, setChecked] = useState(0);
-
 
     useEffect(() => {
         const fetchAPI = async () => {
@@ -73,6 +72,21 @@ export default function Genre() {
         setMovieByGenre(await fetchMovieByGenre(genre_id));
     };
 
+    const getMovieGenre = (idArr) => {
+        const genresArray = []
+        idArr.forEach((sId) => {
+            const genreName = genresList.filter(genre => genre.id === sId)
+            genresArray.push(genreName[0].name)
+        })
+        return (
+            <span>
+                {genresArray.map((genre, index) => {
+                    return <p className="movie-sGenre">{genre}</p>
+                })}
+            </span>
+        )
+    }
+
     const popover = (
         <Popover id="popover-basic">
             <Popover.Content id="popasa" style={{ fontSize: '1.4rem', fontWeight: '600' }}>
@@ -109,12 +123,13 @@ export default function Genre() {
                 <div className="row genre-container2 justify-content-center">
                     {movieByGenre && movieByGenre.map((movie, index) => {
                         return (
-                            index < 6 &&
-                            <Card key={movie.id} className="col-lg col-md-3 col-5 box m-3 genre-5-div">
+                            index < 5 &&
+                            <Card key={movie.id} className="col-lg col-md-3 col-sm-5 box m-3 genre-5-div">
                                 <Card.Img className="genre-img" onClick={() => openModal(movie.id)} variant="top" src={movie.poster} />
                                 <Card.Body className="genre-body">
+                                    <Card.Text className="genre-title" onClick={() => openModal(movie.id)}>{movie.title} ({movie.date})</Card.Text>
                                     <Card.Text><span className="genre-rating"><Ai.AiFillStar /></span> <span className="genre-rating-text">{movie.rating}</span></Card.Text>
-                                    <Card.Text className="genre-title" onClick={() => openModal(movie.id)}>{movie.title}</Card.Text>
+                                    <Card.Text className="genre-rext">{getMovieGenre(movie.genres)}</Card.Text>
                                 </Card.Body>
                                 <Card.Footer>
                                     <div className="text-muted genre-footer d-flex justify-content-between">
